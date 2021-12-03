@@ -42,10 +42,10 @@ if ("serviceWorker" in navigator) {
 function updatePushNotificationStatus(status) {
     pushElement.dataset.checked = status;
     if (status) {
-        pushImage.src = 'button_on.png';
+        pushImage.src = 'images/button_on.png';
     }
     else {
-        pushImage.src = 'button_off.png';
+        pushImage.src = 'images/button_off.png';
     }
 }
 
