@@ -25,8 +25,14 @@ self.addEventListener("install", installEvent => {
 
 self.addEventListener("fetch", fetchEvent => {
     fetchEvent.respondWith(
-      caches.match(fetchEvent.request).then(res => {
-        return res || fetch(fetchEvent.request)
+      // Cache falling back to the network
+      // caches.match(fetchEvent.request).then(res => {
+      //   return res || fetch(fetchEvent.request)
+      // })
+
+      // Network falling back to the cache
+      fetch(fetchEvent.request).catch(function() {
+        return caches.match(fetchEvent.request);
       })
     )
   })
