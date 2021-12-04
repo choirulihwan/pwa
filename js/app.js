@@ -91,7 +91,9 @@ function subscribeToPushNotification() {
         //---to subscribe push notification using pushmanager---
         registration.pushManager.subscribe(
         //---always show notification when received---
-        { userVisibleOnly: true }
+        {   userVisibleOnly: true,
+            applicationServerKey: 'BAn7OtoZmqeS-NN7sAbEeD-YX6B9MJ67sNfXp0pSBXF7EhpK5H53cEXxeOuBm3fFuOA0ErEZmDAA4hLWrBTKXhI'
+        }
         )
         .then(function (subscription) {
             console.log('Push notification subscribed.');
